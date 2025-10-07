@@ -1,7 +1,7 @@
 import { HardhatEthersSigner } from "@nomicfoundation/hardhat-ethers/signers";
 import { expect } from "chai";
 import { ethers, fhevm } from "hardhat";
-import { FhevmType } from "@fhevm/hardhat-plugin";
+import { FhevmType, FhevmTypeEuint } from "@fhevm/hardhat-plugin";
 import type { ContractTransactionResponse } from "ethers";
 
 import { BoundedRandomLibHarness, BoundedRandomLibHarness__factory } from "../types";
@@ -34,7 +34,7 @@ describe("BoundedRandomLib", function () {
     await tx.wait();
 
     const handle = await getter();
-    return fhevm.userDecryptEuint(fhevmType, handle, harnessAddress, alice);
+    return fhevm.userDecryptEuint(fhevmType as FhevmTypeEuint, handle, harnessAddress, alice);
   };
 
   describe("boundedRandomUint8", function () {
