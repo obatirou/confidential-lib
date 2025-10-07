@@ -7,6 +7,31 @@
     "max-line-length": ["error", 120],
     "named-parameters-mapping": "warn",
     "no-console": "off",
-    "not-rely-on-time": "off"
+    "not-rely-on-time": "off",
+    "use-natspec": [
+      "warn",
+      {
+        "title": {
+          "enabled": true,
+          "ignore": {}
+        },
+        "author": {
+          "enabled": false,
+          "ignore": {}
+        },
+        "notice": {
+          "enabled": true,
+          "ignore": {}
+        },
+        "param": {
+          "enabled": true,
+          "ignore": {}
+        },
+        "return": {
+          "enabled": true,
+          "ignore": {}
+        }
+      }
+    ]
   }
 }
