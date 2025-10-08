@@ -12,9 +12,10 @@ import {FHE, euint128, euint64, euint32, euint16, euint8} from "@fhevm/solidity/
 /// a `[min, max]` range without rewriting the same boilerplate for every encrypted integer size.
 ///
 /// @dev The functions revert with `BoundedRandom_InvalidRange` when `max < min`. When the range spans
-///      the full domain of the type (e.g. `min = 0`, `max = type(uint8).max`), the call to
-///      `FHE.randEuint*` receives `upperBound = 2**n`, which matches the constraints enforced by the
-///      underlying FHE runtime.
+///      the full domain of the type (e.g., `min = 0`, `max = 255` for uint8), the arithmetic
+///      `max - min + 1` produces `256` (i.e., `2^8`). The FHE runtime accepts this power-of-two
+///      upper bound, ensuring `FHE.randEuint8(256)` correctly returns values in `[0, 255]`.
+///      The same applies for uint16 (2^16 = 65536), uint32 (2^32), etc.
 ///
 /// NOTE: `euint256` is intentionally omitted because the current FHE library does not expose an
 /// addition helper for that type.

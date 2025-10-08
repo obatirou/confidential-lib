@@ -7,7 +7,11 @@ Building blocks for developing Fully Homomorphic Encryption (FHE) enabled Solidi
 ```ml
 contracts
 ├── BoundedRandomLib.sol
+├── LibSort.sol
 ```
+
+- `BoundedRandomLib.sol`: helpers that produce encrypted random numbers constrained to a `[min, max]` range.
+- `LibSort.sol`: comparator routines that order encrypted integers across multiple bit widths.
 
 ## Prerequisites
 
