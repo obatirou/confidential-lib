@@ -27,8 +27,7 @@ describe("SafeCastLib", function () {
   const decrypt = async (handle: string, fhevmType: FhevmType) =>
     fhevm.userDecryptEuint(fhevmType as FhevmTypeEuint, handle, harnessAddress, alice);
 
-  const decryptBool = async (handle: string) =>
-    fhevm.userDecryptEbool(handle, harnessAddress, alice);
+  const decryptBool = async (handle: string) => fhevm.userDecryptEbool(handle, harnessAddress, alice);
 
   it("casts to euint128 within bounds", async function () {
     const tx = await harness.connect(alice).castToEuint128((1n << 100n) + 5n);
