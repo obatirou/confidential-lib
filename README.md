@@ -8,10 +8,12 @@ Building blocks for developing Fully Homomorphic Encryption (FHE) enabled Solidi
 contracts
 ├── BoundedRandomLib.sol
 ├── LibSort.sol
+├── SafeCastLib.sol
 ```
 
 - `BoundedRandomLib.sol`: helpers that produce encrypted random numbers constrained to a `[min, max]` range.
 - `LibSort.sol`: comparator routines that order encrypted integers across multiple bit widths.
+- `SafeCastLib.sol`: FHE casting helpers with overflow guards.
 
 ## Prerequisites
 
